@@ -2,14 +2,39 @@
 <html>
     <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css">
+        body {
+			background-color:#3B5999;
+			font-family:'lucida grande',tahoma,verdana,arial,sans-serif;
+			color:#D8DFEA;	
+		}
+        #buttons {
+			width:200px;
+			text-align:center;	
+		}
+		#hex {
+			width:auto;
+			margin-top:4px;
+			margin-bottom:4px;	
+		}
+		#input {
+			padding:3px;
+			margin:3px;
+			margin-top:5px;
+			background-color:#1d4289;
+			border:1px outset white;	
+		}
+        </style>
         <script type="text/javascript" src="popup.js"></script>
     </head>
     <body>
-    	<div id="buttons" style="width:200px">
+    	<div id="buttons">
     		<button data-path="3B5999" id="default">Normal Color</button>
             <hr />
         	<button data-path="inputBox" id="custom" >Custom Color:</button><br />
-        	#<input type="text" id="hex" style="width:auto" />
+            <span id="input">
+        		#<input type="text" id="hex"/>
+            </span>
         </div>
     </body>
 </html>
