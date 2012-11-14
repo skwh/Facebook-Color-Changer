@@ -3,6 +3,11 @@
 	"version": "0.9.15",
 	"manifest_version": 2,
 	"description": "Change the Color of your Facebook!",
+	"icons": {
+		"16":"icon16.png",
+		"48":"icon48.png",
+		"128":"icon128.png"
+	},
 	"permissions": [
   		"tabs", "http://*/*", "https://*/*"
   	],
