@@ -9,7 +9,8 @@
 			color:#D8DFEA;	
 		}
         #buttons {
-			width:200px;
+			width:290px;
+			height:215px;
 			text-align:center;	
 		}
 		#hex {
@@ -25,6 +26,7 @@
 			border:1px outset white;	
 		}
         </style>
+        <script type="text/javascript" src="jscolor/jscolor.js"></script>
         <script type="text/javascript" src="popup.js"></script>
     </head>
     <body>
@@ -33,7 +35,7 @@
             <hr />
         	<button data-path="inputBox" id="custom" >Custom Color:</button><br />
             <span id="input">
-        		#<input type="text" id="hex"/>
+        		#<input type="text" id="hex" class="color" />
             </span>
         </div>
     </body>
