@@ -13,8 +13,9 @@ function setColor(e) {
 	}
 	executeScript(null,
 		{code:"document.getElementById('blueBar').style.backgroundColor = \'" + color + "\'"});
-	console.log(color);
-	console.log(e.target.getAttribute("data-path"));
+	if (typeof(Storage) !== "undefined") {
+		localStorage.setItem("FBCOLORS",color);
+	}
 }
 function executeScript(tabId, InjectDetails, callback) {
 	chrome.tabs.executeScript(tabId,InjectDetails,callback);	
@@ -23,5 +24,12 @@ document.addEventListener("DOMContentLoaded",function() {
 	var buttons = document.querySelectorAll("button");
 	for (var i=0;i<buttons.length;i++) {
 		buttons[i].addEventListener('click',setColor);	
+	}
+	if (typeof(Storage) !== "undefined") {
+		var pref = localStorage.getItem("FBCOLORS");
+		if (!(pref == null || pref == "")) {
+			executeScript(null,
+						{code:"document.getElementById('blueBar').style.backgroundColor = \'" + pref + "\'"});
+		}
 	}
 });
