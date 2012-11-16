@@ -1,9 +1,9 @@
 function setColor(e) {
 	var isOk  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/, color;
 	console.log(e.type);
-	if (e.type == "HTMLEvent") {
+	if (e.type == "input") {
 		color = document.getElementById('hex').value;	
-	} else {
+	} else if (e.type == "click") {
 		color = e.target.getAttribute("data-path");
 		if (color == "inputBox") {
 			color = document.getElementById('hex').value;	
@@ -24,6 +24,7 @@ function setColor(e) {
 	if (typeof(Storage) !== "undefined") {
 		localStorage.setItem("FBCOLORS",color);
 	}
+	window.close();
 }
 function executeScript(tabId, InjectDetails, callback) {
 	chrome.tabs.executeScript(tabId,InjectDetails,callback);	
